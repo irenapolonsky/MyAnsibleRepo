@@ -1,0 +1,36 @@
+---
+
+- name: assignment1
+  hosts: nodes
+  remote_user: centos
+  become: yes
+
+
+  vars:
+    ntpserver: 10.0.1.203
+    epelrepo: epel-release
+    ntpconf: https://raw.githubusercontent.com/shayharush/opsschol-ansible/master/session1/files/ntp.conf
+
+  tasks:
+    - name: install EPEL repo
+      yum:  name={{epelrepo}} state=present
+      tags: start_ntp
+
+    - name: install ntp client package
+      yum:  name=ntp state=present
+      tags: start_ntp
+
+    - name: download ntp.conf
+      get_url:
+        url: "{{ntpconf}}"
+        dest: /etc/ntp
+        mode: 0440
+
+    - name: start ntp server
+      systemd: name=ntpd state=started
+      notify: start_restart_ntp_client
+
+  handlers:
+    - name: start_restart_ntp_client
+      service: name=ntpd state=restarted enabled=yes
+
