@@ -1,0 +1,5 @@
+---
+# handlers file for common
+
+- name: start_restart_ntp_client
+  service: name=ntpd state=restarted enabled=yes

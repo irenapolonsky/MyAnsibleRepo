@@ -1,0 +1,20 @@
+---
+# tasks file for common
+
+- name: install EPEL repo
+  yum:  name={{epelrepo}} state=present
+  tags: start_ntp
+
+- name: install ntp client package
+  yum:  name=ntp state=present
+  tags: start_ntp
+
+- name: download ntp.conf
+  get_url:
+    url: "{{ntpconf}}"
+    dest: /etc/ntp
+    mode: 0440
+
+- name: start ntp server
+  systemd: name=ntpd state=started
+  notify: start_restart_ntp_client

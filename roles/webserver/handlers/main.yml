@@ -1,0 +1,5 @@
+---
+# handlers file for webserver
+
+- name: start_restart_httpd_client
+  service: name=httpd state=restarted enabled=yes

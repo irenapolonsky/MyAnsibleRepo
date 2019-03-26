@@ -1,0 +1,27 @@
+---
+# tasks file for webserver
+
+#- name: install EPEL repo
+#  yum:  name={{epelrepo}} state=present
+
+- name: install Apache httpd client package
+  yum:  name=httpd state=present
+     
+- name: download index.xml
+  get_url:
+    url: "{{indexxml}}"
+    dest: /var/www/html
+    mode: 0755
+
+- name: start Apache server
+  systemd: name=httpd state=started
+  notify: start_restart_httpd_client
+
+- name: adding line with node1.opsschool.com to the host file on ansible server
+  lineinfile:
+    path: "/etc/ansible/hosts"
+    line: 'node1.opsschool.com ansible_host=10.0.1.203'
+  delegate_to: 127.0.0.1
+
+- name: verify that server responds to http request and returns status 200
+  uri: url=http://10.0.1.203:80

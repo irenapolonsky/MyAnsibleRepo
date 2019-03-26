@@ -1,0 +1,10 @@
+---
+- name: build db server
+  hosts: dbservers
+  remote_user: centos
+  become: yes
+  roles:
+     - common
+     - db
+
+

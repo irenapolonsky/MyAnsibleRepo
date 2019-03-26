@@ -1,0 +1,6 @@
+---
+# vars file for webserver
+
+#ntpserver: 10.0.1.203
+#epelrepo: epel-release
+indexxml: https://raw.githubusercontent.com/shayharush/opsschol-ansible/master/session1/files/index.html
