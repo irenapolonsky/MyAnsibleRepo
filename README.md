@@ -43,3 +43,30 @@ https://raw.githubusercontent.com/shayharush/opsschol-ansible/master/session1/fi
 https://raw.githubusercontent.com/shayharush/opsschol-ansible/master/session1/files/ntp.conf
 Remeber to create an inventory file with your groups included
 
+==========================================================
+Session #2 homework
+==========================================================
+
+1. Your current playbooks have tasks, vars, handlers - turn them into roles:
+
+    The first role will replace the configure_base_server.yml playbook and setup your basic server - name it common
+
+    The second role will replace the playbook from our last session (db_setup.yml) and will setup your database  - name it db
+
+    The third role will replace task in webserver_setup.yml - name it webserver
+
+    At this point your roles needs to use defined vars and not hardcoded params (ntp servers, package location etc.)
+
+2.  Add to your  inventory file the db node as well
+
+3.  Create a playbook to install and configure our db server with the following roles:
+
+    Common  db
+
+   4. Create a playbook to install and configure our webserver with the following roles:
+
+
+    Common  webserver
+
+
+Make sure to run your playbooks before submitting
