@@ -1,7 +1,11 @@
 # MyAnsibleRepo
 Contains all relevant files for the home assignments related to Ansible
+
+========================================
+
 Ansible session #1 assignment
 
+========================================
 Session #1 assignment
 
 
