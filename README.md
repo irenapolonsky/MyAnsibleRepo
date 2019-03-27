@@ -45,6 +45,7 @@ Remeber to create an inventory file with your groups included
 
 ==========================================================
 Session #2 homework
+
 ==========================================================
 
 1. Your current playbooks have tasks, vars, handlers - turn them into roles:
