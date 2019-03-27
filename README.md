@@ -44,6 +44,7 @@ https://raw.githubusercontent.com/shayharush/opsschol-ansible/master/session1/fi
 Remeber to create an inventory file with your groups included
 
 ==========================================================
+
 Session #2 homework
 
 ==========================================================
