@@ -6,11 +6,6 @@ Contains all relevant files for the home assignments related to Ansible
 Ansible session #1 assignment
 
 ========================================
-Session #1 assignment
-
-
-
-Complete the rest of the videos 
 
 
 For the next tasks reference the repo below
